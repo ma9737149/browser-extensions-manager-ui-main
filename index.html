@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        darkMode : "class",
+        theme: {
+          fontFamily: {},
+          extend: {
+              colors: {
+                  neutral: {
+                      0: "hsl(200, 60%, 99%)",
+                      100: "hsl(0, 0%, 93%)",
+                      200: "hsl(217, 61%, 90%)",
+                      300: "hsl(0, 0%, 78%)",
+                      600: "hsl(226, 11%, 37%)",
+                      700: "hsl(225, 23%, 24%)",
+                      800: "hsl(226, 25%, 17%)",
+                      900: "hsl(227, 75%, 14%)",
+                  },
+                  red: {
+                      400: "hsl(3, 86%, 64%)",
+                      500: "hsl(3, 71%, 56%)",
+                      700: "hsl(3, 77%, 44%)",
+                  },
+              },
+              backgroundImage: {
+                  'light-gradient': "linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%)",
+                  'dark-gradient': "linear-gradient(180deg, #040918 0%, #091540 100%)",
+              },
+              fontFamily: {
+                  noto: ['"Noto Sans"', 'sans-serif']
+              }
+        },
+      }
+    }
+  </script>
+
+
+
+</head>
+
+    <body class="bg-light-gradient dark:bg-dark-gradient min-h-screen m-0 font-noto">
+      <div class="max-w-[90%] my-7 mx-auto sm:max-w-[70%]">
+        <!-- Header -->
+        <div class="
+              header flex justify-between
+              items-center bg-neutral-0 
+              px-4 py-4 
+              rounded-3xl border border-neutral-300 dark:border-none
+              dark:bg-neutral-800
+              shadow-md
+            "
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="300" height="41" viewBox="0 0 300 41" fill="none">
+            <g clip-path="url(#a)">
+              <path fill="#C7231A" fill-rule="evenodd" d="M13.715.516c-2.257 0-4.42.896-6.016 2.492L0 10.707v3.524c0 2.49 1.07 4.73 2.774 6.285A8.485 8.485 0 0 0 0 26.802v3.524l7.699 7.698A8.507 8.507 0 0 0 20 37.742a8.508 8.508 0 0 0 12.301.282L40 30.326v-3.524c0-2.49-1.07-4.73-2.774-6.286A8.485 8.485 0 0 0 40 14.231v-3.524l-7.699-7.7A8.508 8.508 0 0 0 20 3.29 8.485 8.485 0 0 0 13.715.516Zm12.044 20a8.528 8.528 0 0 1-.282-.27L20 14.77l-5.477 5.477a8.528 8.528 0 0 1-.282.27c.096.087.19.177.282.269L20 26.262l5.477-5.476c.092-.093.186-.182.282-.27Zm-3.537 9.81v1.682a4.063 4.063 0 0 0 6.936 2.874l6.398-6.397v-1.683a4.063 4.063 0 0 0-6.937-2.874l-6.397 6.398Zm-4.444 0-6.397-6.398a4.063 4.063 0 0 0-6.937 2.873v1.684l6.397 6.397a4.063 4.063 0 0 0 6.937-2.873v-1.683Zm0-21.302v1.683l-6.397 6.397a4.063 4.063 0 0 1-6.937-2.873v-1.683l6.397-6.397a4.063 4.063 0 0 1 6.937 2.873Zm10.841 8.08-6.397-6.397V9.024a4.063 4.063 0 0 1 6.936-2.873l6.398 6.397v1.683a4.063 4.063 0 0 1-6.937 2.873Z" clip-rule="evenodd"/>
+            </g>
+          
+            <text   
+            x="50"
+            y="28"
+            font-size="24"
+            font-family="Arial, sans-serif"
+            font-weight="bold"
+              fill="currentColor"
+              class="text-black dark:text-white"
+            >
+            Extensions
+          </text>
+          
+            <defs>
+              <clipPath id="a">
+                <path fill="#fff" d="M0 0h40v41H0z"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <div class="
+                  bg-neutral-300 dark:bg-neutral-700 
+                  hover:bg-neutral-400 transition-colors duration-300 
+                  rounded-lg p-3 cursor-pointer
+                    dark:hover:bg-neutral-600 
+                    "
+          >
+            <img alt="mode_icon">
+          </div>
+        </div>
+        <!-- EndHeader -->
+        
+        <!-- Categories  -->
+        <div class="flex flex-col sm:flex-row justify-between items-center mt-14 gap-4 text-neutral-900 dark:text-white">
+          <div class="md:text-3xl text-lg font-bold sm:text-left text-center">
+            Extenstions List
+          </div>
+          <div class="categories flex gap-2 sm:gap-3 sm:justify-end justify-center">
+            <div class="text-md md:text-lg flex justify-center items-center bg-neutral-0 hover:bg-neutral-100 transition-colors duration-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 px-4 py-2 rounded-full cursor-pointer border-2 dark:border-neutral-700">All</div>
+            <div class="text-md md:text-lg flex justify-center items-center bg-neutral-0 hover:bg-neutral-100 transition-colors duration-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 px-4 py-2 rounded-full cursor-pointer border-2 dark:border-neutral-700">Active</div>
+            <div class="text-md md:text-lg flex justify-center items-center bg-neutral-0 hover:bg-neutral-100 transition-colors duration-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 px-4 py-2 rounded-full cursor-pointer border-2 dark:border-neutral-700">Inactive</div>
+          </div>
+        </div>
+        <!-- EndCategories  -->
+
+        <!-- Extenstions -->
+        <div class="extenstions grid mt-9 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"></div>
+        <!-- EndExtenstions -->
+      </div>
+
+
+
+
+
+      <script>
+        // ========== Element references ==========
+        let icon_header_image_path = "";
+        const img_element = document.querySelector(".header div img");
+        const mode_btn = document.querySelector(".header div");
+        const categories = document.querySelectorAll(".categories div");
+        const extensions = document.querySelector(".extenstions");
+      
+        // ========== Active category styles ==========
+        const active_classes = `
+          border-0 border-transparent
+          bg-red-700 text-neutral-0 hover:bg-red-600
+          dark:bg-red-500 dark:text-neutral-800 dark:hover:bg-red-600
+        `.trim();
+      
+        // ========== Default category styles ==========
+        const category_classes = `
+          text-sm md:text-lg
+          flex justify-center items-center
+          bg-neutral-0 hover:bg-neutral-100
+          transition-colors duration-300
+          dark:bg-neutral-800 dark:hover:bg-neutral-700
+          px-4 py-2 rounded-full cursor-pointer
+          border-2 dark:border-neutral-700
+        `.trim();
+      
+        // ========== Show extensions based on tab ==========
+        function showExtenstions(tab) {
+          extensions.innerHTML = "";
+      
+          if (localStorage.getItem("exts")) {
+            let exts = JSON.parse(localStorage.getItem("exts"));
+      
+            exts.forEach((ext, idx) => {
+              const product = `
+                <div class="ext bg-neutral-0 p-5 flex flex-col justify-between rounded-3xl border dark:border-neutral-600 shadow-md min-h-[250px] dark:bg-neutral-800">
+                  <div class="flex gap-4">
+                    <img src="${ext.logo}" alt="ext_icon" class="mb-4">
+                    <div class="space-y-1">
+                      <div class="text-neutral-900 font-bold text-lg dark:text-neutral-0">${ext.name}</div>
+                      <p class="text-neutral-600 dark:text-neutral-400">${ext.description}</p>
+                    </div>
+                  </div>
+      
+                  <div class="flex justify-between items-center mt-4">
+                    <button class="border border-neutral-300 bg-neutral-0 rounded-full px-4 py-2 cursor-pointer hover:bg-neutral-100 duration-300 transition-colors dark:bg-neutral-800 dark:text-neutral-0 dark:hover:bg-neutral-700"
+                      onclick="removeExt(this)" data-index="${idx}">
+                      Remove
+                    </button>
+      
+                    <label class="relative inline-block w-12 h-6">
+                      <input type="checkbox" class="opacity-0 w-0 h-0 peer"
+                        onclick="changeStatus(this)" data-index="${idx}" ${ext.isActive ? 'checked' : ''}>
+                      <span class="absolute inset-0 dark:bg-neutral-500 bg-neutral-300 rounded-full transition peer-checked:bg-red-700 dark:peer-checked:bg-red-500  cursor-pointer"></span>
+                      <span class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-6"></span>
+                    </label>
+                  </div>
+                </div>
+              `;
+      
+              // Render based on active tab
+              if (tab === "All") {
+                extensions.innerHTML += product;
+              } else if (tab === "Active" && ext.isActive) {
+                extensions.innerHTML += product;
+              } else if (tab === "Inactive" && !ext.isActive) {
+                extensions.innerHTML += product;
+              }
+            });
+          } else {
+            // Load extensions from JSON file if not present in localStorage
+            fetch("data.json")
+              .then(res => res.json())
+              .then(exts => {
+                localStorage.setItem("exts", JSON.stringify(exts));
+                showExtenstions(tab); // re-render after loading
+              });
+          }
+        }
+      
+        // ========== Toggle extension active status ==========
+        function changeStatus(checkbox) {
+          const index = parseInt(checkbox.dataset.index);
+          let exts = JSON.parse(localStorage.getItem("exts"));
+      
+          exts[index].isActive = !exts[index].isActive;
+      
+          localStorage.setItem("exts", JSON.stringify(exts));
+          showExtenstions(localStorage.getItem("active")); // re-render based on current tab
+        }
+      
+        // ========== Remove an extension ==========
+        function removeExt(button) {
+          const index = parseInt(button.dataset.index);
+          let exts = JSON.parse(localStorage.getItem("exts"));
+      
+          exts.splice(index, 1); // remove from array
+          localStorage.setItem("exts", JSON.stringify(exts));
+          showExtenstions(localStorage.getItem("active")); // update UI
+        }
+      
+        // ========== Initialize data on page load ==========
+        function init_data() {
+          // Set theme mode
+          if (localStorage.getItem("mode") === "dark") {
+            document.querySelector("html").classList.add("dark");
+            icon_header_image_path = "./assets/images/icon-sun.svg";
+          } else {
+            document.querySelector("html").classList.remove("dark");
+            icon_header_image_path = "./assets/images/icon-moon.svg";
+          }
+      
+          localStorage.setItem("mode", localStorage.getItem("mode") || "light");
+          img_element.setAttribute("src", icon_header_image_path);
+      
+          // Set current tab (All / Active / Inactive)
+          const active = localStorage.getItem("active") || "All";
+          localStorage.setItem("active", active);
+      
+          const index = active === "Active" ? 1 : active === "Inactive" ? 2 : 0;
+          categories[index].className = category_classes + " " + active_classes;
+      
+          showExtenstions(active);
+        }
+      
+        // ========== Remove active class from all categories ==========
+        function removeActiveClassFromAllElements() {
+          categories.forEach(category => {
+            category.className = category_classes;
+          });
+        }
+      
+        // ========== Run on page load ==========
+        window.onload = init_data;
+      
+        // ========== Toggle light/dark mode ==========
+        mode_btn.addEventListener("click", () => {
+          if (localStorage.getItem("mode") === "dark") {
+            document.querySelector("html").classList.remove("dark");
+            icon_header_image_path = "./assets/images/icon-moon.svg";
+            localStorage.setItem("mode", "light");
+          } else {
+            document.querySelector("html").classList.add("dark");
+            icon_header_image_path = "./assets/images/icon-sun.svg";
+            localStorage.setItem("mode", "dark");
+          }
+      
+          img_element.setAttribute("src", icon_header_image_path);
+        });
+      
+        // ========== Handle category tab clicks ==========
+        categories.forEach(category => {
+          category.addEventListener("click", (e) => {
+            removeActiveClassFromAllElements();
+            e.target.className = category_classes + " " + active_classes;
+      
+            const selectedTab = e.target.textContent.trim();
+            localStorage.setItem("active", selectedTab);
+            showExtenstions(selectedTab);
+          });
+        });
+      </script>
+      
+
+
+    </body>
+
+</html>
